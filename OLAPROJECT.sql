@@ -1,11 +1,13 @@
-create table ola(Date date,	Time time,	BookingID varchar(30),	BookingStatus varchar(40),	CustomerID varchar(30),VehicleType varchar(30),
+create table ola(Date date,Time time,BookingID varchar(30),BookingStatus varchar(40),CustomerID varchar(30),VehicleType varchar(30),
 PickupLocation varchar(40), DropLocation varchar(40),	
 AvgVTAT decimal,AvgCTAT	 decimal,CancelledRidesbyCustomer varchar(20),	ReasonforCancellingbyCustomer varchar(50),
 CancelledRidesbyDriver varchar(20),ReasonforCancellingbyDriver varchar(50),
 IncompleteRides varchar(10),IncompleteRidesReason varchar(50),	BookingValue decimal,	
 RideDistance decimal,DriverRatings decimal,CustomerRating decimal,payment varchar(50));
-select*from ola;
---reterview succsefull bookings
+
+
+-- reterview succsefull bookings
+***SQL
 create view successfulbooking as  
 select bookingstatus,count(*) as bookingcount
 from ola
@@ -18,8 +20,7 @@ where bookingstatus='Success';
 
 select*from successfulbooking;
 
---find the avg ride   distance for each vechile type;
-
+--find the avg ride  distance for each vechile type;
 create view avgrideforeachvehicle as 
 select vehicletype,round(avg(coalesce(ridedistance,0)),2)as avg from ola
 group by 1
@@ -57,15 +58,7 @@ where reasonforcancellingbydriver='Personal & Car related issues';
 select*from ola;
 select vehicletype ,min(driverratings) as minrating,max(driverratings) as maxrating from ola
 where vehicletype='Prime Sedan'
-group by 1
-
-
-
---
-select*from ola;
-
-
-
+group by 1;
 
 
 SELECT COUNT(*) 
@@ -73,16 +66,10 @@ FROM information_schema.columns
 WHERE table_name = 'ola';
 SELECT column_name FROM information_schema.columns WHERE table_name='ola' ORDER BY ordinal_position;
 
-
-
---
 select payment ,count(*) as rides from ola
 where payment='UPI'
-group by 1
+group by 1;
 
-
-
----
 SELECT*FROM OLA;
 SELECT VEHICLETYPE,round(COALESCE(AVG(CUSTOMERRATING),0),2) AS avgcustomerRATING
 FROM OLA
@@ -94,7 +81,7 @@ GROUP BY 1;
 select bookingstatus,sum(bookingvalue) as total
 from ola
 where bookingstatus='Success'
-group by 1
+group by 1;
 
 
 --list incomplete rides and resons
@@ -120,7 +107,7 @@ where bookingstatus='Success';
 
 
 
---📊 Booking Volume & Trends
+-- Booking Volume & Trends
 --How many total bookings were made during the month?
 
 select*from ola;
@@ -317,32 +304,16 @@ group by 1,2;
 
 --What is the distribution of booking values: < ₹500, ₹500–1000, > ₹1000?
 select*from ola;
-select bookingvalue,(case when bookingvalue<500 then 'Below 500'
-                                   when bookingvalue>=500 then '500-1000' 
-								   when bookingvalue>1000 then 'above 1000' end) as distribution from ola
-where bookingstatus='Success';
+select bookingvalue,(case when bookingvalue<500 then 'Below' when bookingvalue>=500 then '500-1000' when bookingvalue>1000 then 'above 1000' end) as distribution 
+from ola
+where bookingstatus='Succes;
+	
+---Which payment method is most common among customers
 
-
-
-
-
-
-
-
-
-
-
-
----Which payment method is most common among customers?
 select payment,count(*) as rides from ola
 where bookingstatus='Success'
 group by 1
 order by 2 desc
-limit 1;
-order by 2 desc;
-
-
-
-select count(*) as totalbooking from ola
-where bookingstatus='Success';
+limit 1
+order by 2 desc
 

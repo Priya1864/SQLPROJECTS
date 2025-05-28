@@ -79,3 +79,8 @@ Booking Value Distribution:
 Many bookings fall in the ₹500–₹1000 range.
 
 Very few are above ₹1000.
+
+# Data Source
+The dataset used in this project was synthetically generated using an AI language model for educational and demonstration purposes. The data simulates realistic scenarios to support learning and analysis.
+
+

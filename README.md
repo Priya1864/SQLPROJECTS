@@ -1,4 +1,4 @@
-# Ola Cab Booking Analysis – SQL Project
+# Ola Cab Booking Analysis
 
 ## Project Overview
 This project is a comprehensive SQL-based analysis of Ola cab booking data. It focuses on key metrics such as booking trends, ride cancellations, vehicle performance, customer and driver ratings, and revenue generation. Insights are derived by querying a normalized cab ride table using advanced SQL logic.

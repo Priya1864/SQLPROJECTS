@@ -1,4 +1,6 @@
 # Ola Cab Booking Analysis
+![image](https://github.com/user-attachments/assets/976c94a8-ad7c-4d41-aeeb-74fa7d21889c)
+
 
 ## Project Overview
 This project is a comprehensive SQL-based analysis of Ola cab booking data. It focuses on key metrics such as booking trends, ride cancellations, vehicle performance, customer and driver ratings, and revenue generation. Insights are derived by querying a normalized cab ride table using advanced SQL logic.

@@ -1,5 +1,6 @@
 # Ola Cab Booking Analysis
-![image](https://github.com/user-attachments/assets/976c94a8-ad7c-4d41-aeeb-74fa7d21889c)
+
+![image](https://github.com/user-attachments/assets/7bd32366-5039-476c-b243-60b92f487872)
 
 
 ## Project Overview
